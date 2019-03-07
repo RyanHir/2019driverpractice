@@ -1,3 +1,11 @@
 var timer = document.getElementById("#time");
+var currentTimeMin = 2;
+var currentTimeSec = 30;
+var currentTimeMil = 0
 
-timer = "Timer:";
+function resetTime() {
+    currentTimeMin = 2;
+    currentTimeSec = 30;
+    currentTimeMil = 0;
+    timer.value = "Timer: "+currentTimeMin+":"+currentTimeSec+"."+currentTimeSec;
+}
