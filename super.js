@@ -9,3 +9,6 @@ function resetTime() {
     currentTimeMil = 0;
     timer.innerHTML = "Timer: "+currentTimeMin+":"+currentTimeSec+"."+currentTimeSec;
 }
+
+//Initialize
+resetTime();
