@@ -7,5 +7,5 @@ function resetTime() {
     currentTimeMin = 2;
     currentTimeSec = 30;
     currentTimeMil = 0;
-    timer.value = "Timer: "+currentTimeMin+":"+currentTimeSec+"."+currentTimeSec;
+    timer.innerHTML = "Timer: "+currentTimeMin+":"+currentTimeSec+"."+currentTimeSec;
 }
