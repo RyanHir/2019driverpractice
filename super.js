@@ -1,4 +1,4 @@
-var timer = document.getElementById("#time");
+var timer = document.getElementById("time");
 var currentTimeMin = 2;
 var currentTimeSec = 30;
 var currentTimeMil = 0
