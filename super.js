@@ -29,6 +29,7 @@ function startTime() {
 
     min = currentTimeMin * 60;
     min = min + currentTimeSec;
+    min = min + (currentTimeMil / 1000)
 }
 
 
