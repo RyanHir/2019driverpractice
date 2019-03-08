@@ -2,6 +2,43 @@
 <head>
 	<title>Driver Practice</title>
 	<style>
+		.wrapper { 
+			height: 100%;
+			width: 100%;
+			left:0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			position: absolute;
+			background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+			background-size: 1800% 1800%;
+
+			-webkit-animation: rainbow 41s ease infinite;
+			-z-animation: rainbow 4s ease infinite;
+			-o-animation: rainbow 4s ease infinite;
+			animation: rainbow 4s ease infinite;
+		}
+
+		@-webkit-keyframes rainbow {
+			0%{background-position:0% 82%}
+			50%{background-position:100% 19%}
+			100%{background-position:0% 82%}
+		}
+		@-moz-keyframes rainbow {
+			0%{background-position:0% 82%}
+			50%{background-position:100% 19%}
+			100%{background-position:0% 82%}
+		}
+		@-o-keyframes rainbow {
+			0%{background-position:0% 82%}
+			50%{background-position:100% 19%}
+			100%{background-position:0% 82%}
+		}
+		@keyframes rainbow { 
+			0%{background-position:0% 82%}
+			50%{background-position:100% 19%}
+			100%{background-position:0% 82%}
+		}
 		#main		{margin: 0 auto;}
 		.emptyTabel {width: 30px;}
 		button		{margin: 10px;}
@@ -12,138 +49,146 @@
 	</style>
 </head>
 <body>
-	<table id="main">
-		<tr class="alignStuff">
-			<td>
-				<div id="timerStuff">
-					<h1>2019: Driver Practice</h1>
-					<p id="time"></p>
-					<button type="button" onclick="startTime()">Start Timer</button>
-					<button type="button" onclick="stopTime()">Stop Timer</button>
-					<button type="button" onclick="resetTime()">Reset Timer</button>
-				</div>
-			</td>
+	<div class="wrapper">
+		<table id="main">
+			<tr class="alignStuff">
+				<td>
+					<div id="timerStuff">
+						<h1>2019: Driver Practice</h1>
+						<p id="time"></p>
+						<button type="button" onclick="startTime()">Start Timer</button>
+						<button type="button" onclick="stopTime()">Stop Timer</button>
+						<button type="button" onclick="resetTime()">Reset Timer</button>
+					</div>
+				</td>
+			</tr>
+
+			<tr class="alignStuff">
+				<td>
+				<table>
+					<tr class="alignStuff">
+						<td>
+							<div class="rocket">
+								<h2>Rocket Left</h2>
+								<table>
+									<tr>
+										<th><button type="button">HF3</button></th>
+										<th><button type="button">B3</button></th>
+										<th><button type="button">HN3</button></th>
+									</tr>
+									<tr>
+										<th><button type="button">HF2</button></th>
+										<th><button type="button">B2</button></th>
+										<th><button type="button">HN2</button></th>
+									</tr>
+									<tr>
+										<th><button type="button">HF1</button></th>
+										<th><button type="button">B1</button></th>
+										<th><button type="button">HN1</button></th>
+									</tr>
+								</table>
+							</div>
+						</td>
+
+						<td class="emptyTabel"></td>
+
+						<td>
+							<div class="rocket">
+								<h2>Rocket Right</h2>
+								<table>
+									<tr>
+										<th><button type="button">HF3</button></th>
+										<th><button type="button">B3</button></th>
+										<th><button type="button">HN3</button></th>
+									</tr>
+									<tr>
+										<th><button type="button">HF2</button></th>
+										<th><button type="button">B2</button></th>
+										<th><button type="button">HN2</button></th>
+									</tr>
+									<tr>
+										<th><button type="button">HF1</button></th>
+										<th><button type="button">B1</button></th>
+										<th><button type="button">HN1</button></th>
+									</tr>
+								</table>
+							</div>
+						</td>
+
+						<td class="emptyTabel"></td>
+
+						<td>
+							<div class="cargo">
+								<h2>Cargo Ship</h2>
+								<table>
+									<tr>
+										<td><button type="button">Hatch 8</button></td>
+										<td><button type="button">Cargo 8</button></td>
+									</tr>
+									<tr>
+										<td><button type="button">Hatch 7</button></td>
+										<td><button type="button">Cargo 7</button></td>
+									</tr>
+									<tr>
+										<td><button type="button">Hatch 6</button></td>
+										<td><button type="button">Cargo 6</button></td>
+									</tr>
+									<tr>
+										<td><button type="button">Hatch 5</button></td>
+										<td><button type="button">Cargo 5</button></td>
+									</tr>
+									<tr>
+										<td><button type="button">Hatch 4</button></td>
+										<td><button type="button">Cargo 4</button></td>
+									</tr>
+									<tr>
+										<td><button type="button">Hatch 3</button></td>
+										<td><button type="button">Cargo 3</button></td>
+									</tr>
+									<tr>
+										<td><button type="button">Hatch 2</button></td>
+										<td><button type="button">Cargo 2</button></td>
+									</tr>
+									<tr>
+										<td><button type="button">Hatch 1</button></td>
+										<td><button type="button">Cargo 1</button></td>
+									</tr>
+
+								</table>
+							</div>
+						</td>
+
+						<td class="emptyTabel"></td>
+
+						<td>
+							<div class="hab">
+								<h2>Hab</h2>
+								<table>
+									<tr>
+										<th><button type="button">Platform 3</button></th>
+									</tr>
+									<tr>
+										<th><button type="button">Platform 2</button></th>
+									</tr>
+									<tr>
+										<th><button type="button">Platform 1</button></th>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</tr>
+
+			<tr class="alignStuff">
+				<td>
+					<h2>Submit</h2>
+					<button type="button">Submit</button>
+				</td>
+			</tr>
 		</tr>
-
-		<tr>
-			<td>
-			<table>
-				<tr class="alignStuff">
-					<td>
-						<div class="rocket">
-							<h2>Rocket Left</h2>
-							<table>
-								<tr>
-									<th><button type="button">HF3</button></th>
-									<th><button type="button">B3</button></th>
-									<th><button type="button">HN3</button></th>
-								</tr>
-								<tr>
-									<th><button type="button">HF2</button></th>
-									<th><button type="button">B2</button></th>
-									<th><button type="button">HN2</button></th>
-								</tr>
-								<tr>
-									<th><button type="button">HF1</button></th>
-									<th><button type="button">B1</button></th>
-									<th><button type="button">HN1</button></th>
-								</tr>
-							</table>
-						</div>
-					</td>
-
-					<td class="emptyTabel"></td>
-
-					<td>
-						<div class="rocket">
-							<h2>Rocket Right</h2>
-							<table>
-								<tr>
-									<th><button type="button">HF3</button></th>
-									<th><button type="button">B3</button></th>
-									<th><button type="button">HN3</button></th>
-								</tr>
-								<tr>
-									<th><button type="button">HF2</button></th>
-									<th><button type="button">B2</button></th>
-									<th><button type="button">HN2</button></th>
-								</tr>
-								<tr>
-									<th><button type="button">HF1</button></th>
-									<th><button type="button">B1</button></th>
-									<th><button type="button">HN1</button></th>
-								</tr>
-							</table>
-						</div>
-					</td>
-
-					<td class="emptyTabel"></td>
-
-					<td>
-						<div class="cargo">
-							<h2>Cargo Ship</h2>
-							<table>
-								<tr>
-									<td><button type="button">Hatch 8</button></td>
-									<td><button type="button">Cargo 8</button></td>
-								</tr>
-								<tr>
-									<td><button type="button">Hatch 7</button></td>
-									<td><button type="button">Cargo 7</button></td>
-								</tr>
-								<tr>
-									<td><button type="button">Hatch 6</button></td>
-									<td><button type="button">Cargo 6</button></td>
-								</tr>
-								<tr>
-									<td><button type="button">Hatch 5</button></td>
-									<td><button type="button">Cargo 5</button></td>
-								</tr>
-								<tr>
-									<td><button type="button">Hatch 4</button></td>
-									<td><button type="button">Cargo 4</button></td>
-								</tr>
-								<tr>
-									<td><button type="button">Hatch 3</button></td>
-									<td><button type="button">Cargo 3</button></td>
-								</tr>
-								<tr>
-									<td><button type="button">Hatch 2</button></td>
-									<td><button type="button">Cargo 2</button></td>
-								</tr>
-								<tr>
-									<td><button type="button">Hatch 1</button></td>
-									<td><button type="button">Cargo 1</button></td>
-								</tr>
-
-							</table>
-						</div>
-					</td>
-
-					<td class="emptyTabel"></td>
-
-					<td>
-						<div class="hab">
-							<h2>Hab</h2>
-							<table>
-								<tr>
-									<th><button type="button">Platform 3</button></th>
-								</tr>
-								<tr>
-									<th><button type="button">Platform 2</button></th>
-								</tr>
-								<tr>
-									<th><button type="button">Platform 1</button></th>
-								</tr>
-							</table>
-						</div>
-					</td>
-				</tr>
-			</table>
-		</tr>
-		</td>
-	</tr>
-	</table>
+		</table>
+	</div>
 	<script src="super.js"></script>
 </body>
 </html>
