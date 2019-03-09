@@ -1,37 +1,41 @@
 var timer = document.getElementById("time");
-var currentTimeMin = 2;
-var currentTimeSec = 30;
+var currentTime = Date.now();
+var destinedTime = Date.now() + 150000;
+var stopNow = false;
 
 function resetTime() {
-    currentTimeMin = 2;
-    currentTimeSec = 30;
-    timer.innerHTML = currentTimeMin+":"+currentTimeSec;
+	currentTime = Date.now();
+	destinedTime = Date.now() + 150000;
+	
+	var timeLeft = destinedTime - currentTime;
+	var min = Math.floor(timeLeft/60000);
+	var sec = (timeLeft % 60000)/1000;
+	
+	timer.innerHTML = min+":"+sec;
 }
+
 function startTime() {
-    function idk(duration, display) {
-        var timer = duration, minutes, seconds;
-        setInterval(function () {
-            minutes = parseInt(timer / 60, 10)
-            seconds = (timer % 60);
+	resetTime();
+	stopNow = false;
+	var x = setInterval(function() {
+		currentTime = Date.now();
+		var distance = destinedTime - currentTime;
 
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
+		var min = Math.floor(distance/60000);
+		var sec = (distance % 60000)/1000;
+		
+		timer.innerHTML = min+":"+sec;
+		
+		if (distance < 0 || stopNow == true) {
+			clearInterval(x);
+			resetTime();
+		}
 
-            display.textContent = minutes + ":" + seconds;
-
-            if (--timer < 0) {
-                timer = duration;
-            }
-        }, 1000);
-    }
-
-    startingTime = Date.now;
-
-
-
-    idk(min, timer);
+	},10);
 }
+function stopTime() {
+	stopNow = true;
 
-
+}
 //Initialize
 resetTime();
