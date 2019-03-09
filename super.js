@@ -8,12 +8,18 @@ var lastFormatted = "2:00";
 var lastRaw = 0;
 var distance = 0;
 
+function n(n){
+	var num = Number(n);
+	if (String(num).split(".").length < 3 || String(num).split(".")[1].length<=3 ){
+		num = num.toFixed(3);
+	}
+	return num >= 10 ? "" + num: "0" + num;
+}
 function getTime() {
 	currentTime = Date.now();
 	distance = destinedTime - currentTime;
-
 	var min = Math.floor(distance/60000);
-	var sec = (distance % 60000)/1000;
+	var sec = n((distance % 60000)/1000);
 
 	lastRaw = distance;
 	lastFormatted = min+":"+sec;
@@ -24,7 +30,13 @@ function getTime() {
 function addData(buttonID) {
 	var match = document.getElementById("match").value;
 	if (data.length == 0) {
-		data.push([match,buttonID,lastFormatted, "0`:00"]);
+		var diff = 150000 - distance;
+		
+		var min = Math.floor(diff/60000);
+		var sec = n((diff % 60000) / 1000);
+		
+		data.push([match,buttonID,lastFormatted, min+":"+sec]);
+		document.getElementById("last").innerHTML = buttonID
 	}
 	else {
 		var previousFormatted = data[data.length - 1][2];
@@ -36,9 +48,11 @@ function addData(buttonID) {
 		var diff = previousRaw - distance;
 
 		var min = Math.floor(diff/60000);
-		var sec = (diff % 60000) / 1000;
+		var sec = n((diff % 60000) / 1000);
 
 		data.push([match,buttonID,lastFormatted, min+":"+sec]);
+
+		document.getElementById("last").innerHTML = buttonID
 	}
 }
 
@@ -66,12 +80,13 @@ function compile() {
 }
 
 function resetTime() {
+	stopTime();
 	currentTime = Date.now();
 	destinedTime = Date.now() + 150000;
 	
 	var timeLeft = destinedTime - currentTime;
 	var min = Math.floor(timeLeft/60000);
-	var sec = (timeLeft % 60000)/1000;
+	var sec = n((timeLeft % 60000)/1000);
 	
 	timer.innerHTML = min+":"+sec;
 
@@ -86,7 +101,6 @@ function startTime() {
 		timer.innerHTML = time[0];
 		if (time[1] < 0 || stopNow == true) {
 			clearInterval(x);
-			resetTime();
 		}
 	},1);
 }
