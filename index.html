@@ -4,146 +4,78 @@
 	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
-<body>
-	<div class="wrapper">
-		<table id="main">
-			<tr class="alignStuff">
-				<td>
-					<div id="timerStuff">
-						<h1>2019: Driver Practice</h1>
-						<p id="time">2:30</p><p id="last">Nan</p>
-						<button type="button" onclick="startTime()">Start Timer</button>
-						<button type="button" onclick="resetTime()">Reset Timer</button>
-						<input type="number" id="match" min="1" value="1"></input>
-					</div>
-				</td>
-			</tr>
-
-			<tr class="alignStuff">
-				<td>
-				<table>
-					<tr class="alignStuff">
-						<td>
-							<div class="rocket">
-								<h2>Rocket Left</h2>
-								<table>
-									<tr>
-										<th><button type="button" onClick="addData(this.innerHTML)">LHF3</button></th>
-										<th><button type="button" onClick="addData(this.innerHTML)">LB3</button></th>
-										<th><button type="button" onClick="addData(this.innerHTML)">LHN3</button></th>
-									</tr>
-									<tr>
-										<th><button type="button" onClick="addData(this.innerHTML)">LHF2</button></th>
-										<th><button type="button" onClick="addData(this.innerHTML)">LB2</button></th>
-										<th><button type="button" onClick="addData(this.innerHTML)">LHN2</button></th>
-									</tr>
-									<tr>
-										<th><button type="button" onClick="addData(this.innerHTML)">LHF1</button></th>
-										<th><button type="button" onClick="addData(this.innerHTML)">LB1</button></th>
-										<th><button type="button" onClick="addData(this.innerHTML)">LHN1</button></th>
-									</tr>
-								</table>
-							</div>
-						</td>
-
-						<td class="emptyTabel"></td>
-
-						<td>
-							<div class="rocket">
-								<h2>Rocket Right</h2>
-								<table>
-									<tr>
-										<th><button type="button" onClick="addData(this.innerHTML)">RHF3</button></th>
-										<th><button type="button" onClick="addData(this.innerHTML)">RB3</button></th>
-										<th><button type="button" onClick="addData(this.innerHTML)">RHN3</button></th>
-									</tr>
-									<tr>
-										<th><button type="button" onClick="addData(this.innerHTML)">RHF2</button></th>
-										<th><button type="button" onClick="addData(this.innerHTML)">RB2</button></th>
-										<th><button type="button" onClick="addData(this.innerHTML)">RHN2</button></th>
-									</tr>
-									<tr>
-										<th><button type="button" onClick="addData(this.innerHTML)">RHF1</button></th>
-										<th><button type="button" onClick="addData(this.innerHTML)">RB1</button></th>
-										<th><button type="button" onClick="addData(this.innerHTML)">RHN1</button></th>
-									</tr>
-								</table>
-							</div>
-						</td>
-
-						<td class="emptyTabel"></td>
-
-						<td>
-							<div class="cargo">
-								<h2>Cargo Ship</h2>
-								<table>
-									<tr>
-										<td><button type="button" onClick="addData(this.innerHTML)">Hatch 8</button></td>
-										<td><button type="button" onClick="addData(this.innerHTML)">Cargo 8</button></td>
-									</tr>
-									<tr>
-										<td><button type="button" onClick="addData(this.innerHTML)">Hatch 7</button></td>
-										<td><button type="button" onClick="addData(this.innerHTML)">Cargo 7</button></td>
-									</tr>
-									<tr>
-										<td><button type="button" onClick="addData(this.innerHTML)">Hatch 6</button></td>
-										<td><button type="button" onClick="addData(this.innerHTML)">Cargo 6</button></td>
-									</tr>
-									<tr>
-										<td><button type="button" onClick="addData(this.innerHTML)">Hatch 5</button></td>
-										<td><button type="button" onClick="addData(this.innerHTML)">Cargo 5</button></td>
-									</tr>
-									<tr>
-										<td><button type="button" onClick="addData(this.innerHTML)">Hatch 4</button></td>
-										<td><button type="button" onClick="addData(this.innerHTML)">Cargo 4</button></td>
-									</tr>
-									<tr>
-										<td><button type="button" onClick="addData(this.innerHTML)">Hatch 3</button></td>
-										<td><button type="button" onClick="addData(this.innerHTML)">Cargo 3</button></td>
-									</tr>
-									<tr>
-										<td><button type="button" onClick="addData(this.innerHTML)">Hatch 2</button></td>
-										<td><button type="button" onClick="addData(this.innerHTML)">Cargo 2</button></td>
-									</tr>
-									<tr>
-										<td><button type="button" onClick="addData(this.innerHTML)">Hatch 1</button></td>
-										<td><button type="button" onClick="addData(this.innerHTML)">Cargo 1</button></td>
-									</tr>
-
-								</table>
-							</div>
-						</td>
-
-						<td class="emptyTabel"></td>
-
-						<td>
-							<div class="hab">
-								<h2>Hab</h2>
-								<table>
-									<tr>
-										<th><button type="button" onClick="addData(this.innerHTML)">Platform 3</button></th>
-									</tr>
-									<tr>
-										<th><button type="button" onClick="addData(this.innerHTML)">Platform 2</button></th>
-									</tr>
-									<tr>
-										<th><button type="button" onClick="addData(this.innerHTML)">Platform 1</button></th>
-									</tr>
-								</table>
-							</div>
-						</td>
-					</tr>
-				</table>
-			</tr>
-
-			<tr class="alignStuff">
-				<td>
-					<button type="button" onClick="compile()"><strong>Submit</strong></button>
-				</td>
-			</tr>
-		</tr>
-		</table>
+<body class="oneGrid">
+	<div class="center">
+		<h1>2019: Driver Practice</h1>
+		<p id="time">2:30</p><p id="last">Nan</p>
+		<div class="threeGrid">
+			<button type="button" onclick="startTime()">Start Timer</button>
+			<button type="button" onclick="resetTime()">Reset Timer</button>
+			<input type="number" id="match" min="1" value="1"></input>
+		</div>
 	</div>
+
+	<div class="fourGrid center">
+		<div class="rocket">
+			<h2>Rocket Left</h2>
+			<div class="threeGrid">
+				<button type="button" onClick="addData(this.innerHTML)">LHF3</button>
+				<button type="button" onClick="addData(this.innerHTML)">LB3</button>
+				<button type="button" onClick="addData(this.innerHTML)">LHN3</button>
+				<button type="button" onClick="addData(this.innerHTML)">LHF2</button>
+				<button type="button" onClick="addData(this.innerHTML)">LB2</button>
+				<button type="button" onClick="addData(this.innerHTML)">LHN2</button>
+				<button type="button" onClick="addData(this.innerHTML)">LHF1</button>
+				<button type="button" onClick="addData(this.innerHTML)">LB1</button>
+				<button type="button" onClick="addData(this.innerHTML)">LHN1</button>
+			</div>
+		</div>
+		<div class="rocket">
+			<h2>Rocket Right</h2>
+			<div class="threeGrid">
+				<button type="button" onClick="addData(this.innerHTML)">RHF3</button>
+				<button type="button" onClick="addData(this.innerHTML)">RB3</button>
+				<button type="button" onClick="addData(this.innerHTML)">RHN3</button>
+				<button type="button" onClick="addData(this.innerHTML)">RHF2</button>
+				<button type="button" onClick="addData(this.innerHTML)">RB2</button>
+				<button type="button" onClick="addData(this.innerHTML)">RHN2</button>
+				<button type="button" onClick="addData(this.innerHTML)">RHF1</button>
+				<button type="button" onClick="addData(this.innerHTML)">RB1</button>
+				<button type="button" onClick="addData(this.innerHTML)">RHN1</button>
+					</div>
+		</div>
+		<div class="cargo">
+			<h2>Cargo Ship</h2>
+			<div class="twoGrid">
+				<button type="button" onClick="addData(this.innerHTML)">Hatch 8</button>
+				<button type="button" onClick="addData(this.innerHTML)">Cargo 8</button>
+				<button type="button" onClick="addData(this.innerHTML)">Hatch 7</button>
+				<button type="button" onClick="addData(this.innerHTML)">Cargo 7</button>
+				<button type="button" onClick="addData(this.innerHTML)">Hatch 6</button>
+				<button type="button" onClick="addData(this.innerHTML)">Cargo 6</button>
+				<button type="button" onClick="addData(this.innerHTML)">Hatch 5</button>
+				<button type="button" onClick="addData(this.innerHTML)">Cargo 5</button>
+				<button type="button" onClick="addData(this.innerHTML)">Hatch 4</button>
+				<button type="button" onClick="addData(this.innerHTML)">Cargo 4</button>
+				<button type="button" onClick="addData(this.innerHTML)">Hatch 3</button>
+				<button type="button" onClick="addData(this.innerHTML)">Cargo 3</button>
+				<button type="button" onClick="addData(this.innerHTML)">Hatch 2</button>
+				<button type="button" onClick="addData(this.innerHTML)">Cargo 2</button>
+				<button type="button" onClick="addData(this.innerHTML)">Hatch 1</button>
+				<button type="button" onClick="addData(this.innerHTML)">Cargo 1</button>
+			</div>
+		</div>
+		<div class="hab">
+			<h2>Hab</h2>
+			<div class="oneGrid">
+				<button type="button" onClick="addData(this.innerHTML)">Platform 3</button>
+				<button type="button" onClick="addData(this.innerHTML)">Platform 2</button>
+				<button type="button" onClick="addData(this.innerHTML)">Platform 1</button>
+			</div>
+		</div>
+	</div>
+
+	<button type="button" onClick="compile()" class="center"><strong>Submit</strong></button>
 	<script src="super.js"></script>
 </body>
 </html>
